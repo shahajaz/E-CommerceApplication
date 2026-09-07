@@ -74,7 +74,7 @@ const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
+                  className="px-4 py-3 bg-background border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
                   required
                 />
                 <input
@@ -84,7 +84,7 @@ const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
+                  className="px-4 py-3 bg-background border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
                   required
                 />
               </div>
@@ -96,7 +96,7 @@ const Contact = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, subject: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
+                className="w-full px-4 py-3 bg-background border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
                 required
               />
 
@@ -113,7 +113,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center space-x-2"
+                className="w-full bg-[image:var(--gradient-primary)] text-primary-foreground py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center space-x-2 cursor-pointer"
               >
                 <Send className="w-5 h-5" />
                 <span>Send Message</span>

@@ -99,11 +99,26 @@ const HeroSlider = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               {slide.description}
             </p>
-            <Link
-              to={slide.url}
-              className="px-8 py-4 gradient-primary text-primary-foreground rounded-lg hover:glow-on-hover animate-smooth font-semibold text-lg">
-              {slide.cta}
-            </Link>
+            
+            {/* Buttons */}
+            <div className="flex items-center justify-center gap-6">
+              {/* CTA Button */}
+              <Link
+                to={slide.url}
+                className="px-8 py-4 gradient-primary text-primary-foreground rounded-full hover:glow-on-hover animate-smooth font-semibold text-lg">
+                  {slide.cta}
+              </Link>
+              
+              {/* Explore More Button */}
+              <Link
+                to="/products" 
+                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-lg
+              hover:border-white hover:bg-[linear-gradient(135deg,hsl(24_94%_53%),hsl(20_91%_48%),hsl(0_84%_60%))]
+              transition-all duration-300">
+                Explore More
+              </Link>
+            </div>
+
           </div>
         </div>
       </div>
@@ -129,7 +144,7 @@ const HeroSlider = () => {
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
                 ? "bg-primary glow-primary"
-                : "bg-white/30 hover:bg-white/50"
+                : "bg-white/30 hover:bg-primary/50 hover:glow-primary"
             }`}
           />
         ))}

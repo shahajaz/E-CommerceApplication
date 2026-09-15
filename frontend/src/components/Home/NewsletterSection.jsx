@@ -28,13 +28,13 @@ const NewsletterSection = () => {
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground placeholder-muted-foreground"
+                className="w-full pl-12 pr-4 py-4 bg-primary border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-foreground placeholder-muted-foreground"
                 required
               />
             </div>
             <button
               type="submit"
-              className="px-8 py-4 gradient-primary text-primary-foreground rounded-lg hover:glow-on-hover animate-smooth font-semibold flex items-center justify-center space-x-2"
+              className="px-8 py-4 gradient-primary text-primary-foreground rounded-full hover:glow-on-hover animate-smooth font-semibold flex items-center justify-center space-x-2 cursor-pointer"
             >
               <Send className="w-5 h-5" />
               <span>Subscribe</span>

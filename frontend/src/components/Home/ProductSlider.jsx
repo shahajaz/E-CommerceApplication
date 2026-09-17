@@ -1,17 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-const cartSlice = createSlice({
-  name: "cart",
-  initialState: {
-    cart: [],
-  },
-  reducers: {
-    addToCart: (state, action) => {
-      state.cart.push(action.payload);
-    },
-  },
-});
-
-export const { addToCart } = cartSlice.actions;
-
-export default cartSlice.reducer;
+const ProductSlider = ({ products }) => {
+  return <></>;
+};
+export default ProductSlider;

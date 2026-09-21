@@ -9,7 +9,22 @@ export const fetchProducts = createAsyncThunk("product/fetchAll", async({
   ratings="", 
   search="",
   page = 1,
-}) => {
+}, thunkAPI) => {
+  try {
+    const params = new URLSearchParams();
+
+    if(category) params.append("category", category);
+    if(availability) params.append("availability", availability);
+    if(price) params.append("price", price);
+    if(ratings) params.append("ratings", ratings);
+    if(search) params.append("search", search);
+    if(page) params.append("page", page);
+
+    const response = await axiosInstance.get(`/products?${params.toString()}`);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data.message || "Failed to fetch products");
+  }
 
 });
 
@@ -27,7 +42,11 @@ const productSlice = createSlice({
     isPostingReview: false,
     productReviews: [],
   },
-  extraReducers: (builder) => {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchProducts.pending, (state) => {
+      state.loading = true;
+    });
+  },
 });
 
 export default productSlice.reducer;

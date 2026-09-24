@@ -11,10 +11,7 @@ import {
     postProductReview
 } from "../controllers/productController.js";
 
-import {
-    authorizedRoles,
-    isAuthenticated,
-} from "../middlewares/authMiddleware.js";
+import { authorizedRoles, isAuthenticated, } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
